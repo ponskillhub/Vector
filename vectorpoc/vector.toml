@@ -1,0 +1,10 @@
+[sources.in]
+type = "stdin"
+
+[sinks.my_sink]
+inputs = ["in"]
+type = "elasticsearch"
+encoding.codec = "text"
+endpoint = "https://test-livelogs.search.windows.net/"
+index_name = "hotels-quickstart"
+auth = "kUOiCN7aiOWVv8cNuEIQe5Nxbr5b5PkQOk72VTbVOlAzSeBbNlGy"
