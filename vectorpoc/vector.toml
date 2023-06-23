@@ -1,10 +1,13 @@
 [sources.in]
 type = "stdin"
 
-[sinks.my_sink]
+[sinks.my_http_sink]
 inputs = ["in"]
-type = "elasticsearch"
+type = "http"
 encoding.codec = "text"
-endpoint = "https://test-livelogs.search.windows.net/"
-index_name = "hotels-quickstart"
-auth = "kUOiCN7aiOWVv8cNuEIQe5Nxbr5b5PkQOk72VTbVOlAzSeBbNlGy"
+uri = "https://test-livelogs.search.windows.net/indexes/hotels-quickstart/docs/index?api-version=2020-06-30"
+method = "post"
+
+[sinks.my_http_sink.headers]
+    Content-Type = "application/json"
+    api-key = "kUOiCN7aiOWVv8cNuEIQe5Nxbr5b5PkQOk72VTbVOlAzSeBbNlGy"
